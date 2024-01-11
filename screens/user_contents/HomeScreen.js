@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, StatusBar, ScrollView, ImageBackground, TextInput, TouchableWithoutFeedback, FlatList} from 'react-native';
-import React, {useRef, useState, useEffect} from 'react';
 import Carousel from 'react-native-anchor-carousel';
+import React, {useRef, useState, useEffect} from 'react';
 import { FontAwesome5, Feather, MaterialIcons } from '@expo/vector-icons'
-import COLORS from '../constants/colors';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, StatusBar, ScrollView, ImageBackground, TextInput, TouchableWithoutFeedback, FlatList} from 'react-native';
    
 
 const HomeScreen = () => {

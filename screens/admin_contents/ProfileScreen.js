@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView, ScrollView, View, Text, Image, TouchableOpacity, Switch, Alert } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
-import COLORS from '../constants/colors';
+import { StyleSheet, SafeAreaView, ScrollView, View, Text, Image, TouchableOpacity, Switch, Alert } from 'react-native';
 
 const SECTIONS = [
   {
@@ -15,22 +14,6 @@ const SECTIONS = [
     header: 'App Setting',
     items: [
       { id: 'language', icon: 'globe', label: 'Language', type: 'select' },
-      { id: 'about', icon: 'info', label: 'About Us', type: 'link' },
-    ],
-  },
-  {
-    header: 'Manage',
-    items: [
-      { id: 'save', icon: 'pocket', label: 'Saved', type: 'link' },
-      { id: 'book', icon: 'book', label: 'Booked', type: 'link' },
-      { id: 'cancel', icon: 'x-circle', label: 'Cancelled', type: 'link' },
-    ],
-  },
-  {
-    header: 'Help',
-    items: [
-      { id: 'bug', icon: 'flag', label: 'Report Bug', type: 'link' },
-      { id: 'contact', icon: 'mail', label: 'Contact Us', type: 'link' },
     ],
   },
 ];
@@ -54,7 +37,7 @@ const ProfileScreen = ({ navigation }) => {
       <Image
         alt=""
         source={{
-          uri: 'https://scontent.fpag2-1.fna.fbcdn.net/v/t39.30808-6/409536051_3681301398772487_6545605475362918965_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeGlJROxelhEi0NpOgwTjzAJJaX-EOkIARslpf4Q6QgBG4LNknqPxZ_3061gyF7jxShYVqKKF1bxZ7ukbMEkfwSC&_nc_ohc=6pdX2jq2n-0AX8EO0o0&_nc_ht=scontent.fpag2-1.fna&oh=00_AfBrCnaQEEFrUCDoP9K8XrgmkZp00d6w3zXTvb5WbqhPlw&oe=659B28BB',
+          uri: 'https://scontent.fcrk1-3.fna.fbcdn.net/v/t39.30808-6/409536051_3681301398772487_6545605475362918965_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeGlJROxelhEi0NpOgwTjzAJJaX-EOkIARslpf4Q6QgBG4LNknqPxZ_3061gyF7jxShYVqKKF1bxZ7ukbMEkfwSC&_nc_ohc=foxi0cf2wEYAX9kz2Ay&_nc_ht=scontent.fcrk1-3.fna&oh=00_AfBTLjrHfT2rdWRCGA175-uTDW8nMGWGieH-hifpk77ufQ&oe=65A1177B',
         }}
         style={styles.profileAvatar}
       />
@@ -64,7 +47,7 @@ const ProfileScreen = ({ navigation }) => {
         // handle onPress
       }}>
       <View style={styles.profileAction}>
-      <FeatherIcon color="#fff" name="edit-3" size={12} />
+      <FeatherIcon color="#fff" name="camera" size={12} />
       </View>
       </TouchableOpacity>
       </View>
@@ -72,7 +55,7 @@ const ProfileScreen = ({ navigation }) => {
 
       <View style={styles.profileBody}>
       <Text style={styles.profileName}>John Carlo Diga</Text>
-      <Text style={styles.profileAddress}>jcfdiga@gmail.com</Text>
+      <Text style={styles.profileAddress}>admin@gmail.com</Text>
       </View>
       </View>
 
@@ -140,7 +123,7 @@ const styles = StyleSheet.create({
 container: {
   paddingVertical: 15,
   backgroundColor: 'black',
-  paddingBottom: 55,
+  paddingBottom: 230,
 },
 section: {
   paddingTop: 15,

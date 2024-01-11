@@ -1,10 +1,10 @@
 import React from 'react'
-import COLORS from '../constants/colors';
-import Button from '../components/Button';
+import COLORS from '../../constants/colors';
+import Button from '../../components/Button';
 import { LinearGradient } from "expo-linear-gradient";
 import { View, Text, Pressable, Image } from 'react-native'
 
-const Welcome = ({ navigation }) => {
+const Landing = ({ navigation }) => {
     return (
         <LinearGradient style={{flex: 1}}
         colors={[COLORS.black, COLORS.black]}
@@ -12,7 +12,7 @@ const Welcome = ({ navigation }) => {
         <View style={{ flex: 1 }}>
             <View>
             <Image
-                source={require("../assets/5.png")}
+                source={require("../../assets/5.png")}
                 style={{
                 height: 200,
                 width: 600,
@@ -27,7 +27,7 @@ const Welcome = ({ navigation }) => {
                 }}
             />
             <Image
-                source={require("../assets/6.png")}
+                source={require("../../assets/6.png")}
                 style={{
                 height: 250,
                 width: 600,
@@ -48,7 +48,7 @@ const Welcome = ({ navigation }) => {
             <Text style={{fontSize: 46, fontWeight: 800, color: COLORS.white}}></Text>
             <View>
                 <Image
-                source={require("../assets/title.png")}
+                source={require("../../assets/title.png")}
                 style={{
                 height: 280,
                 width: 335,
@@ -118,4 +118,4 @@ const Welcome = ({ navigation }) => {
 )
 }
 
-export default Welcome
+export default Landing

@@ -1,6 +1,6 @@
 import React from 'react';
+import COLORS from '../../constants/colors';
 import { StyleSheet, SafeAreaView, ScrollView, Text, TouchableOpacity, View, Image } from 'react-native';
-import COLORS from '../constants/colors';
 
 const items = [
   {
@@ -175,6 +175,7 @@ const MovieScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 container: {
   padding: 10,
+  paddingBottom: 50
 },
 title: {
   fontSize: 32,

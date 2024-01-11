@@ -1,52 +1,59 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, ScrollView, Text, View, TouchableOpacity, Image } from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 import Icon from 'react-native-vector-icons/Ionicons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import { StyleSheet, SafeAreaView, ScrollView, Text, View, TouchableOpacity, Image } from 'react-native';
 
 const items = [
   {
-    img: 'https://www.smsupermalls.com/data/uploads/2021/09/SM_Calambafacadet_af22s1g5s4dfs.jpg',
-    branch: 'SM City Calamba',
+    id: '1',
+    img: 'https://www.smsupermalls.com/data/uploads/2022/08/SM_City_Calamba.jpg',
+    name: 'SM City Calamba',
     address: 'National Road, Calamba City Triangle,\nBrgy. Real, Calamba City, Laguna,\nPhilippines',
     saved: true,
   },
   {
-    img: 'https://www.smsupermalls.com/data/uploads/2018/06/Mall_of_Asia.jpg',
-    branch: 'SM Mall of Asia',
+    id: '2',
+    img: 'https://www.smsupermalls.com/data/uploads/2023/03/SMOA2.png',
+    name: 'SM Mall of Asia',
     address: 'SM Mall of Asia, Seaside Blvd. Pasay City, Philippines',
     saved: true,
   },
   {
-    img: 'https://www.smsupermalls.com/data/uploads/2018/06/San_Pablo.jpg',
-    branch: 'SM City San Pablo',
+    id: '3',
+    img: 'https://www.smsupermalls.com/data/uploads/2022/08/SM_City_San_Pablo.jpg',
+    name: 'SM City San Pablo',
     address: 'Maharlika Highway, Riverina Residential\nand Commercial Estates, San Rafael,\nSan Pablo City, Laguna, Philippines',
     saved: false,
   },
   {
-    img: 'https://www.smsupermalls.com/data/uploads/2018/06/Santa-Rosa.jpg',
-    branch: 'SM City Santa Rosa',
+    img: 'https://www.smsupermalls.com/data/uploads/2022/08/SM_City_Santa_Rosa.jpg',
+    name: 'SM City Santa Rosa',
     address: 'Old National Highway, Brgy. Tagapo,\nSta. Rosa City, Laguna, Philippines',
     saved: false,
 
   },
   {
-    img: 'https://www.smsupermalls.com/data/uploads/2018/06/Pampanga2.jpg',
-    branch: 'SM City Pampanga',
+    id: '4',
+    img: 'https://www.smsupermalls.com/data/uploads/2022/08/SM_City_Pampanga.jpg',
+    name: 'SM City Pampanga',
     address: 'Olongapo-Gapan Road, Lagundi, Mexico,\nPampanga (East Wing) and San Jose,\nSan Fernando, Pampanga',
     saved: true,
   },
 ];
 
-const Branches = () => {
+const Branches = ({navigation}) => {
   return (
     <SafeAreaView style={{ backgroundColor: 'black' }}>
     <ScrollView contentContainerStyle={styles.container}>
-    {items.map(({ img, branch, address, saved }, index) => {
+    {items.map(({ id, img, name, address, saved }, index) => {
     return (
       <TouchableOpacity
         key={index}
         onPress={() => {
           // handle onPress
+          if(id == '1'){
+            navigation.navigate('SMCalamba')
+          }
         }}>
       <View style={styles.card}>
       <View style={styles.cardLikeWrapper}>
@@ -76,7 +83,7 @@ const Branches = () => {
 
       <View style={styles.cardBody}>
       <View style={styles.cardHeader}>
-        <Text style={styles.cardTitle}>{branch}</Text>
+        <Text style={styles.cardTitle}>{name}</Text>
       </View>
 
       <View style={styles.cardFooter}>
@@ -103,6 +110,7 @@ const Branches = () => {
 const styles = StyleSheet.create({
 container: {
   padding: 24,
+  paddingBottom: 50
 },
 card: {
   position: 'relative',

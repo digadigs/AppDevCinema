@@ -1,17 +1,17 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, SafeAreaView, Text, Image, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
-import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import COLORS from '../../constants/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
-import COLORS from '../constants/colors';
+import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import { StyleSheet, View, ScrollView, SafeAreaView, Text, Image, TouchableOpacity } from 'react-native';
 
 const IMAGES = [
-    'https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p20056_v_h10_ab.jpg',
-    'https://cloudfront-us-east-1.images.arcpublishing.com/pmn/EQITB3WRKVBJJOC3WE5OGP4RP4.jpg',
-    'https://variety.com/wp-content/uploads/2016/03/titanic-anniversary.jpg?w=1000&h=563&crop=1',
+    'https://mloz35cl5wye.i.optimole.com/cb:s357.4350f/w:1024/h:712/q:90/https://www.slugmag.com/wp/wp-content/uploads/2017/04/screen-shot-2016-11-27-at-1-42-50-pm.png',
+    'https://cdn.vox-cdn.com/thumbor/T-VABqDoNb2d1NgEcKQgvFMvTI0=/0x0:2067x1377/1400x1050/filters:focal(869x524:1199x854):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/54120133/your_name_oped.0.jpg',
+    'https://www.animepilipinas.com/wp-content/uploads/2018/02/Your-Name-Taki-and-Mitsuha.png',
   ];
 
-const Titanic = ({ navigation }) => {
+const YourName = ({ navigation }) => {
  const [value, setValue] = React.useState(0);
 
   return (
@@ -60,12 +60,12 @@ const Titanic = ({ navigation }) => {
           </Swiper>
         </View>
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>Titanic</Text>
+          <Text style={styles.headerTitle}>Your Name.</Text>
 
           <View style={styles.headerRow}>
             <View style={styles.headerLocation}>
               <Text style={styles.headerLocationText}>
-              1997 ‧ Romance/Adventure ‧ 3h 30m
+              2016 ‧ Romance/Fantasy ‧ 1h 47m
               </Text>
             </View>
           </View>
@@ -82,7 +82,7 @@ const Titanic = ({ navigation }) => {
 
               <FontAwesome color="#FF5757" name="star" solid={true} size={16} />
 
-              <Text style={styles.headerStarsText}>513 reviews</Text>
+              <Text style={styles.headerStarsText}>210 reviews</Text>
             </View>
           </View>
         </View>
@@ -91,33 +91,33 @@ const Titanic = ({ navigation }) => {
       <ScrollView contentContainerStyle={styles.listContent} horizontal={true} showsHorizontalScrollIndicator={false}>
         {[
           {
-            img: 'https://m.media-amazon.com/images/M/MV5BODgzMzM2NTE0Ml5BMl5BanBnXkFtZTcwMTcyMTkyOQ@@._V1_FMjpg_UX1000_.jpg',
-            label: 'Kate Winslet',
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Kamiki_Ryunosuke_from_%22Godzilla_Minus_One%22_at_Red_Carpet_of_the_Tokyo_International_Film_Festival_2023_%2853347030272%29.jpg/1200px-Kamiki_Ryunosuke_from_%22Godzilla_Minus_One%22_at_Red_Carpet_of_the_Tokyo_International_Film_Festival_2023_%2853347030272%29.jpg',
+            label: 'Kamiki Ryunosuke',
             color: 'white',
           },
           {
-            img: 'https://cdn.britannica.com/65/227665-050-D74A477E/American-actor-Leonardo-DiCaprio-2016.jpg',
-            label: 'Leonardo DiCaprio',
+            img: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTmg6FBQfHe2uSY0tgh3ByqGHBv6Thzi6B0ArOi6gAiSfHgLlHYqpAEMPSkqwu0bJMy7x_cUMEWpFVhb9A',
+            label: 'Kamishiraishi',
             color: 'white',
           },
           {
-            img: 'https://m.media-amazon.com/images/M/MV5BMTI5NzA2NTE0NF5BMl5BanBnXkFtZTcwNzAxMTUxMw@@._V1_.jpg',
-            label: 'Billy Zane',
+            img: 'https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/307557_v9_bb.jpg',
+            label: 'Masami Nagasawa',
             color: 'white',
           },
           {
-            img: 'https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/106_v9_bb.jpg',
-            label: 'Kathy Bates',
+            img: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTfuO243P7sGLzPbmHee86Mg2bLyncgV-xquY0RIPBloC-M87DykE6bcN4qOUUYASNyagWvGB8HrAKIqLw',
+            label: 'Etsuko Ichihara',
             color: 'white',
           },
           {
-            img: 'https://hips.hearstapps.com/hmg-prod/images/gettyimages-506803402.jpg',
-            label: 'Bill Paxton',
+            img: 'https://m.media-amazon.com/images/M/MV5BNzBmNDcxYzktYzIyOC00NDFkLWFjMjMtNDA2NjlkNmMwMTkzXkEyXkFqcGdeQXVyMjg0MTI5NzQ@._V1_.jpg',
+            label: 'Ryo Narita',
             color: 'white',
           },
           {
-            img: 'https://ntvb.tmsimg.com/assets/assets/73954_v9_bb.jpg?w=270&h=360',
-            label: 'Victor Garber',
+            img: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQGv9RNXWWmrYaKF4ggvBWuB8RIlbp1NMdRovqpXE89JbXVgBgL',
+            label: 'Kana Hanazawa',
             color: 'white',
           },
           
@@ -146,9 +146,8 @@ const Titanic = ({ navigation }) => {
           <Text style={styles.aboutTitle}>About</Text>
 
           <Text style={styles.aboutDescription}>
-            James Cameron "Titanic" is an epic, action-packed romance set against the ill-fated maiden voyage of the R.M.S. Titanic.
-            The pride and joy of the White Star Line and, at the time, the largest moving object ever built. She was the most luxurious liner of her era 
-            the "ship of dreams" which ultimately carried over 1,500 people to their death in the ice cold waters of the North Atlantic in the early hours of April 15, 1912.
+          Two teenagers share a profound, magical connection upon discovering they are swapping bodies.
+          Things manage to become even more complicated when the boy and girl decide to meet in person.
           </Text>
         </View>
       </ScrollView>
@@ -166,7 +165,7 @@ const Titanic = ({ navigation }) => {
 
           <TouchableOpacity
             onPress={() => {
-              // handle onPress
+              navigation.navigate("TicketScreen")
             }}
             style={{ flex: 1, paddingHorizontal: 8 }}>
             <View style={styles.btnSecondary}>
@@ -394,4 +393,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Titanic
+export default YourName

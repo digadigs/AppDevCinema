@@ -1,17 +1,16 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, SafeAreaView, Text, Image, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
-import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 import Icon from 'react-native-vector-icons/Ionicons';
-import COLORS from '../constants/colors';
+import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import { StyleSheet, View, ScrollView, SafeAreaView, Text, Image, TouchableOpacity } from 'react-native';
 
 const IMAGES = [
-    'https://mloz35cl5wye.i.optimole.com/cb:s357.4350f/w:1024/h:712/q:90/https://www.slugmag.com/wp/wp-content/uploads/2017/04/screen-shot-2016-11-27-at-1-42-50-pm.png',
-    'https://cdn.vox-cdn.com/thumbor/T-VABqDoNb2d1NgEcKQgvFMvTI0=/0x0:2067x1377/1400x1050/filters:focal(869x524:1199x854):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/54120133/your_name_oped.0.jpg',
-    'https://www.animepilipinas.com/wp-content/uploads/2018/02/Your-Name-Taki-and-Mitsuha.png',
+    'https://www.smsupermalls.com/data/uploads/2022/08/SM_City_Calamba.jpg',
+    'https://www.smsupermalls.com/data/uploads/2021/09/SM_Calambafacadet_af22s1g5s4dfs.jpg',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/9790Calamba_City_Roads_Barangays_Landmarks_23.jpg/800px-9790Calamba_City_Roads_Barangays_Landmarks_23.jpg',
   ];
 
-const YourName = ({ navigation }) => {
+const SMCalamba = ({ navigation }) => {
  const [value, setValue] = React.useState(0);
 
   return (
@@ -60,94 +59,45 @@ const YourName = ({ navigation }) => {
           </Swiper>
         </View>
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>Your Name.</Text>
+          <Text style={styles.headerTitle}>SM City Calamba</Text>
 
           <View style={styles.headerRow}>
             <View style={styles.headerLocation}>
+            <Icon color="white" name="time" size={20} marginRight={5}  />
               <Text style={styles.headerLocationText}>
-              2016 ‧ Romance/Fantasy ‧ 1h 47m
+              Mall Hours:
               </Text>
             </View>
           </View>
 
           <View style={styles.headerRow}>
-            <View style={styles.headerStars}>
-              <FontAwesome color="#FF5757" name="star" solid={true} size={16} />
-
-              <FontAwesome color="#FF5757" name="star" solid={true} size={16} />
-
-              <FontAwesome color="#FF5757" name="star" solid={true} size={16} />
-
-              <FontAwesome color="#FF5757" name="star" solid={true} size={16} />
-
-              <FontAwesome color="#FF5757" name="star" solid={true} size={16} />
-
-              <Text style={styles.headerStarsText}>210 reviews</Text>
+            <View style={styles.headerLocation}>
+              <Text style={styles.headerLocationText}>
+              Sunday to Thursday   |   10am - 10pm
+              </Text>
+            </View>
+          </View>
+          <View style={styles.headerRow}>
+            <View style={styles.headerLocation}>
+              <Text style={styles.headerLocationText}>
+              Friday & Saturday   |   10am to 10pm
+              </Text>
             </View>
           </View>
         </View>
 
-        <Text style={styles.listTitle}>Casts</Text>
-      <ScrollView contentContainerStyle={styles.listContent} horizontal={true} showsHorizontalScrollIndicator={false}>
-        {[
-          {
-            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Kamiki_Ryunosuke_from_%22Godzilla_Minus_One%22_at_Red_Carpet_of_the_Tokyo_International_Film_Festival_2023_%2853347030272%29.jpg/1200px-Kamiki_Ryunosuke_from_%22Godzilla_Minus_One%22_at_Red_Carpet_of_the_Tokyo_International_Film_Festival_2023_%2853347030272%29.jpg',
-            label: 'Kamiki Ryunosuke',
-            color: 'white',
-          },
-          {
-            img: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTmg6FBQfHe2uSY0tgh3ByqGHBv6Thzi6B0ArOi6gAiSfHgLlHYqpAEMPSkqwu0bJMy7x_cUMEWpFVhb9A',
-            label: 'Kamishiraishi',
-            color: 'white',
-          },
-          {
-            img: 'https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/307557_v9_bb.jpg',
-            label: 'Masami Nagasawa',
-            color: 'white',
-          },
-          {
-            img: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTfuO243P7sGLzPbmHee86Mg2bLyncgV-xquY0RIPBloC-M87DykE6bcN4qOUUYASNyagWvGB8HrAKIqLw',
-            label: 'Etsuko Ichihara',
-            color: 'white',
-          },
-          {
-            img: 'https://m.media-amazon.com/images/M/MV5BNzBmNDcxYzktYzIyOC00NDFkLWFjMjMtNDA2NjlkNmMwMTkzXkEyXkFqcGdeQXVyMjg0MTI5NzQ@._V1_.jpg',
-            label: 'Ryo Narita',
-            color: 'white',
-          },
-          {
-            img: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQGv9RNXWWmrYaKF4ggvBWuB8RIlbp1NMdRovqpXE89JbXVgBgL',
-            label: 'Kana Hanazawa',
-            color: 'white',
-          },
-          
-      ].map(({ img, label, color }, index) => (
-        <TouchableOpacity
-          key={index}
-          onPress={() => {
-
-          }}>
-          <View style={[styles.genre, { backgroundColor: color=COLORS.black }]}>
-            <Image source={{ uri: img }} style={styles.cardImg} />
-            <Text style={styles.genreLabel}>{label}</Text>
-          </View>
-        </TouchableOpacity>
-      ))}
-    </ScrollView>
-
         <View style={styles.stats}>
           <View style={styles.statsItem}>
-            <FontAwesome color="white" name="building" size={20 } />
+            <FontAwesome color="white" name="envelope-open" size={20 } />
 
-            <Text style={styles.statsItemText}>Showing on selected SM Branches</Text>
+            <Text style={styles.statsItemText}>customercare@smsupermalls.com</Text>
           </View>
         </View>
         <View style={styles.about}>
-          <Text style={styles.aboutTitle}>About</Text>
+          <Text style={styles.aboutTitle}>Address</Text>
 
           <Text style={styles.aboutDescription}>
-          Two teenagers share a profound, magical connection upon discovering they are swapping bodies.
-          Things manage to become even more complicated when the boy and girl decide to meet in person.
+            National Road, Calamba City Triangle, Brgy. Real, Calamba City, Laguna, Philippines
           </Text>
         </View>
       </ScrollView>
@@ -165,7 +115,7 @@ const YourName = ({ navigation }) => {
 
           <TouchableOpacity
             onPress={() => {
-              // handle onPress
+              navigation.navigate("TicketScreen")
             }}
             style={{ flex: 1, paddingHorizontal: 8 }}>
             <View style={styles.btnSecondary}>
@@ -246,6 +196,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     lineHeight: 32,
     color: 'white',
+    marginBottom: 10
   },
   headerRow: {
     flexDirection: 'row',
@@ -393,4 +344,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default YourName
+export default SMCalamba

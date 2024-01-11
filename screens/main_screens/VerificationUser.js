@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import COLORS from '../constants/colors';
-import Button from '../components/Button';
+import COLORS from '../../constants/colors';
+import Button from '../../components/Button';
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, Alert, Image, TextInput, Pressable} from 'react-native';
 
-const Verification = ({ navigation }) => {
+const VerificationUser = ({ navigation }) => {
    const [otp, setOtp] = useState('');
    const handleVerifyOtp = () => {
      if (otp === '1234') {
-       navigation.navigate("VerificationSuccess")
+       navigation.navigate("VerificationSuccessUser")
      } else {
        Alert.alert('Error', 'Please try again.');
      }
@@ -22,7 +22,7 @@ return (
   >
     <SafeAreaView style={{ flex: 1, top: 50}}>
     <Image
-      source={require("../assets/Verification.png")}
+      source={require("../../assets/Verification.png")}
       style={{
       height: 250,
       width: 400,
@@ -83,7 +83,7 @@ return (
       }}>
       <Text style={{ fontSize: 16, color: COLORS.white }}>Didn't receive a code?</Text>
       <Pressable
-        // onPress={() => navigation.navigate("Login")}
+        onPress={() => Alert.alert('Verification', 'New code has been sent.')}
       >
       <Text style={{
           fontSize: 16,
@@ -97,4 +97,4 @@ return (
   </LinearGradient>
   );
  };
-export default Verification
+export default VerificationUser

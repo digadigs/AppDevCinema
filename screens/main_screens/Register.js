@@ -1,8 +1,8 @@
-import COLORS from '../constants/colors';
-import Button from '../components/Button';
+import COLORS from '../../constants/colors';
+import Button from '../../components/Button';
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, Text, Image, Pressable, TextInput } from 'react-native'
+import { View, Text, Image, Pressable, TextInput, StyleSheet } from 'react-native'
 
 const Register = ({ navigation }) => {
     return (
@@ -11,7 +11,7 @@ const Register = ({ navigation }) => {
         >
         <SafeAreaView style={{ flex: 1}}>
             <Image
-            source={require("../assets/Registration.png")}
+            source={require("../../assets/Registration.png")}
             style={{
             height: 250,
             width: 400,
@@ -125,33 +125,39 @@ const Register = ({ navigation }) => {
 
         <Button
             title="Register"
-            onPress={() => navigation.navigate("Verification")}
+            onPress={() => navigation.navigate("VerificationUser")}
             style={{
             marginTop: 18,
         }}
         />
-
-        <View style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            marginVertical: 10
-        }}>
-        <Text style={{ fontSize: 16, color: COLORS.white }}>Already have an account?</Text>
-        <Pressable
-            onPress={() => navigation.navigate("Login")}
-        >
-        <Text style={{
-            fontSize: 16,
-            color: COLORS.red,
-            fontWeight: "bold",
-            marginLeft: 6
-        }}>Login</Text>
-        </Pressable>
-        </View>
+        <Text style={styles.formFooter}>
+              By clicking "Register", you agree to our
+              <Text style={{ color: '#FF5757', fontWeight: '600' }}>
+                {' '}
+                Terms & Conditions{' '}
+              </Text>
+              and
+              <Text style={{ color: '#FF5757', fontWeight: '600' }}>
+                {' '}
+                Privacy Policy
+              </Text>
+        </Text>
         </View>
         </SafeAreaView>
         </LinearGradient>
         
     )
 }
+
+const styles = StyleSheet.create({
+
+formFooter: {
+    marginTop: 15,
+    fontSize: 15,
+    lineHeight: 21,
+    fontWeight: '400',
+    color: 'white',
+    textAlign: 'center',
+  },
+});
 export default Register

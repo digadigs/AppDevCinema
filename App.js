@@ -2,7 +2,7 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { Splash, Welcome, Register, Login, Verification, VerificationAdmin, VerificationSuccess, Dashboard, Logout, Titanic, YourName} from "./screens";
+import { Splash, Landing, Register, Login, VerificationUser, VerificationSuccessUser, VerificationAdmin, VerificationSuccessAdmin, UserDashboard, AdminDashboard, Logout, Titanic, YourName, SMCalamba } from "./screens/main_screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,8 +21,8 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="Welcome"
-          component={Welcome}
+          name="Landing"
+          component={Landing}
           options={{
             headerShown: false
           }}
@@ -42,8 +42,15 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="Verification"
-          component={Verification}
+          name="VerificationUser"
+          component={VerificationUser}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="VerificationSuccessUser"
+          component={VerificationSuccessUser}
           options={{
             headerShown: false
           }}
@@ -56,15 +63,22 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="VerificationSuccess"
-          component={VerificationSuccess}
+          name="VerificationSuccessAdmin"
+          component={VerificationSuccessAdmin}
           options={{
             headerShown: false
           }}
         />
         <Stack.Screen
-          name="Dashboard"
-          component={Dashboard}
+          name="UserDashboard"
+          component={UserDashboard}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="AdminDashboard"
+          component={AdminDashboard}
           options={{
             headerShown: false,
           }}
@@ -86,6 +100,13 @@ export default function App() {
         <Stack.Screen
           name="YourName"
           component={YourName}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="SMCalamba"
+          component={SMCalamba}
           options={{
             headerShown: false
           }}

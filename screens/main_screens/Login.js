@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import COLORS from '../constants/colors';
-import Button from '../components/Button';
+import COLORS from '../../constants/colors';
+import Button from '../../components/Button';
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, Image, Pressable, TextInput, Alert } from 'react-native'
@@ -12,7 +12,7 @@ const Login = ({ navigation }) => {
         navigation.navigate("VerificationAdmin")
      }
      else if (email === 'customer@gmail.com') {
-        navigation.navigate("Verification")
+        navigation.navigate("VerificationUser")
      } else {
        Alert.alert('Error', 'Please try again.');
      }
@@ -27,7 +27,7 @@ const Login = ({ navigation }) => {
         >
         <SafeAreaView style={{ flex: 1}}>
         <Image
-        source={require("../assets/Login.png")}
+        source={require("../../assets/Login.png")}
         style={{
         height: 250,
         width: 400,

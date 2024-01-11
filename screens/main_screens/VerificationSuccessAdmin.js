@@ -1,8 +1,8 @@
 import React from 'react';
-import {StyleSheet,SafeAreaView,View,Text,TouchableOpacity } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import {StyleSheet,SafeAreaView,View,Text,TouchableOpacity } from 'react-native';
 
-const VerificationSuccess = ({ navigation }) => {
+const VerificationSuccessAdmin = ({ navigation }) => {
     return (
     <SafeAreaView style={{ flex: 1, backgroundColor: 'black' }}>
         <View style={styles.container}>
@@ -18,7 +18,7 @@ const VerificationSuccess = ({ navigation }) => {
             </View>
 
             <TouchableOpacity
-            onPress={() => navigation.navigate('Dashboard')}
+            onPress={() => navigation.navigate('AdminDashboard')}
                 // handle onPress
             >
             <View style={styles.btn}>
@@ -93,4 +93,4 @@ btnText: {
 },
 });
 
-export default VerificationSuccess
+export default VerificationSuccessAdmin
