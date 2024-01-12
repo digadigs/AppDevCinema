@@ -36,9 +36,7 @@ const ProfileScreen = ({ navigation }) => {
       <View style={styles.profileAvatarWrapper}>
       <Image
         alt=""
-        source={{
-          uri: 'https://scontent.fcrk1-3.fna.fbcdn.net/v/t39.30808-6/409536051_3681301398772487_6545605475362918965_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeGlJROxelhEi0NpOgwTjzAJJaX-EOkIARslpf4Q6QgBG4LNknqPxZ_3061gyF7jxShYVqKKF1bxZ7ukbMEkfwSC&_nc_ohc=foxi0cf2wEYAX9kz2Ay&_nc_ht=scontent.fcrk1-3.fna&oh=00_AfBTLjrHfT2rdWRCGA175-uTDW8nMGWGieH-hifpk77ufQ&oe=65A1177B',
-        }}
+        source={require('../../assets/profile.jpg')}
         style={styles.profileAvatar}
       />
 

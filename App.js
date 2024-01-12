@@ -2,7 +2,7 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { Splash, Landing, Register, Login, VerificationUser, VerificationSuccessUser, VerificationAdmin, VerificationSuccessAdmin, UserDashboard, AdminDashboard, Logout, Titanic, YourName, SMCalamba } from "./screens/main_screens";
+import { Splash, Landing, Register, Login, VerificationUser, VerificationSuccessUser, VerificationAdmin, VerificationSuccessAdmin, UserDashboard, Reservation, Result, AdminDashboard, Logout, Titanic, YourName, SMCalamba } from "./screens/main_screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -72,6 +72,20 @@ export default function App() {
         <Stack.Screen
           name="UserDashboard"
           component={UserDashboard}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Reservation"
+          component={Reservation}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Result"
+          component={Result}
           options={{
             headerShown: false,
           }}

@@ -10,6 +10,8 @@ import VerificationAdmin from "../main_screens/VerificationAdmin";
 import VerificationSuccessAdmin from "../main_screens/VerificationSuccessAdmin";
 import AdminDashboard from "../main_screens/AdminDashboard";
 import UserDashboard from "../main_screens/UserDashboard";
+import Reservation from "../main_screens/Reservation";
+import Result from "../main_screens/Result";
 import Logout from "../main_screens/Logout";
 
 // Movies List //
@@ -29,6 +31,8 @@ export {
     VerificationAdmin,
     VerificationSuccessAdmin,
     UserDashboard,
+    Reservation,
+    Result,
     AdminDashboard,
     Logout,
     Titanic,

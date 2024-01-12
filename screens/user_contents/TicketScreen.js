@@ -1,14 +1,25 @@
 import React from 'react';
-import { useState } from 'react';
-import FeatherIcon from 'react-native-vector-icons/Feather';
-import { StyleSheet, View, ScrollView, Image, Text, TouchableOpacity, SafeAreaView, Alert, TouchableWithoutFeedback } from 'react-native';
-import { color } from 'react-native-elements/dist/helpers';
+import { useState, useEffect } from 'react';
+import { StyleSheet, View, ScrollView, Image, Text, TouchableOpacity, SafeAreaView, Alert } from 'react-native';
 
-const TicketScreen = () => {
+const TicketScreen = ({navigation}) => {
   const [form, setForm] = React.useState({
     side: '',
     temperature: '',
   });
+
+  const [currentDateTime, setCurrentDateTime] = useState(new Date())
+
+  useEffect(() =>{
+    const tmer = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000);
+    return () => clearInterval(tmer);
+  }, []);
+
+  const handlePress = () => {
+    navigation.navigate('Reservation')
+  };
 
   return (
     
@@ -32,25 +43,25 @@ const TicketScreen = () => {
         <View style={styles.section}>
         <Text style={styles.titleSeat}>Select Seat:</Text>
         <View style={{paddingBottom: 30, marginLeft: 50}}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handlePress}>
           <Image 
           source={require("../../assets/Seat.png")}
           style={{ height: 80, width: 80 }}>
           </Image>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity style={{opacity: .3}}>
           <Image 
           source={require("../../assets/Seat2.png")}
           style={{ height: 80, width: 80, marginTop: -80, marginLeft: 50 }}>
           </Image>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity style={{opacity: .3}}>
           <Image 
           source={require("../../assets/Seat3.png")}
           style={{ height: 80, width: 80, marginTop: -80, marginLeft: 100 }}>
           </Image>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handlePress}>
           <Image 
           source={require("../../assets/Seat4.png")}
           style={{ height: 80, width: 80, marginTop: -80, marginLeft: 150 }}>
@@ -62,7 +73,7 @@ const TicketScreen = () => {
           style={{ height: 80, width: 80, marginTop: -20, marginLeft: -30 }}>
           </Image>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity style={{opacity: .3}}>
           <Image 
           source={require("../../assets/Seat6.png")}
           style={{ height: 80, width: 80, marginTop: -80, marginLeft: 25 }}>
@@ -74,7 +85,7 @@ const TicketScreen = () => {
           style={{ height: 80, width: 80, marginTop: -80, marginLeft: 75 }}>
           </Image>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity style={{opacity: .3}}>
           <Image 
           source={require("../../assets/Seat8.png")}
           style={{ height: 80, width: 80, marginTop: -80, marginLeft: 125 }}>
@@ -104,146 +115,30 @@ const TicketScreen = () => {
           style={{ height: 80, width: 80, marginTop: -80, marginLeft: 100 }}>
           </Image>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handlePress}>
           <Image 
           source={require("../../assets/Seat13.png")}
           style={{ height: 80, width: 80, marginTop: -80, marginLeft: 150 }}>
           </Image>
         </TouchableOpacity>
         </View>
-          
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionTitle}>Movies</Text>
-
-              <Text style={styles.sectionSubtitle}>Select one option:</Text>
-            </View>
-
-            <TouchableOpacity>
-            <View style={styles.sectionBadge}>
-              <Text style={styles.sectionBadgeText}>View All</Text>
-            </View>
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.sectionOptions}>
-            {[
-              { label: 'Titanic', price: '3h 30m' },
-              { label: 'Your Name.', price: '1hr 47m' },
-              { label: 'World War Z', price: '1hr 56m' },
-              { label: 'Sing 2', price: '1h 50m' },
-              { label: 'The Social Network', price: '2hrs' },
-            ].map(({ label, price }, index) => {
-              const isActive = form.side === label;
-              return (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() => {
-                    setForm({ ...form, side: label });
-                  }}>
-                  <View style={[styles.radio, index === 0 && { borderTopWidth: 0, borderBottomWidth: 0 }]}>
-                    <View style={[styles.radioInput, isActive && styles.radioInputActive]} />
-
-                    <Text style={styles.radioLabel}>{label}</Text>
-
-                    {price && (
-                      <Text style={styles.radioPrice}>
-                        {price}
-                      </Text>
-                    )}
-                  </View>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
         </View>
 
         <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionTitle}>Branches</Text>
-
-              <Text style={styles.sectionSubtitle}>Select one option:</Text>
-            </View>
-
-            <TouchableOpacity>
-            <View style={styles.sectionBadge}>
-              <Text style={styles.sectionBadgeText}>View All</Text>
-            </View>
-            </TouchableOpacity>
+          <View style={styles.sectionBody}>
+          <View style= {{marginTop: -75, flexDirection: 'row', justifyContent:'center', alignItems: 'center', flexWrap:'wrap'}}>
+            <Text style={styles.subtitle1}><Image source={require("../../assets/Available.png")} style={{ height: 45, width: 45}}></Image>Available</Text>
+            <Text style={styles.subtitle2}><Image source={require("../../assets/Booked.png")} style={{ height: 45, width: 45}}></Image>Booked</Text>
           </View>
-
-          <View style={styles.sectionOptions}>
-            {['SM City Calamba', 'SM Mall of Asia', 'SM City San Pablo', 'SM City Santa Rosa', 'SM City Pampanga'].map((label, index) => {
-              const isActive = form.temperature === label;
-              return (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() => {
-                    setForm({ ...form, temperature: label });
-                  }}>
-                  <View style={[styles.radio, index === 0 && { borderTopWidth: 0 }]}>
-                    <View style={[styles.radioInput, isActive && styles.radioInputActive]} />
-
-                    <Text style={styles.radioLabel}>{label}</Text>
-                  </View>
-                </TouchableOpacity>
-              );
-            })}
           </View>
         </View>
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <View>
-              <Text style={styles.sectionTitle}>Date</Text>
 
-              <Text style={styles.sectionSubtitle}>Select one option:</Text>
-            </View>
-
-            <TouchableOpacity>
-            <View style={styles.sectionBadge}>
-              <Text style={styles.sectionBadgeText}>View All</Text>
-            </View>
-            </TouchableOpacity>
-          </View>
-        <View style={styles.sectionOptions}>
-            {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((label, index) => {
-              const isActive = form.temperature === label;
-              return (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() => {
-                    setForm({ ...form, temperature: label });
-                  }}>
-                  <View style={[styles.radio, index === 0 && { borderTopWidth: 0 }]}>
-                    <View style={[styles.radioInput, isActive && styles.radioInputActive]} />
-
-                    <Text style={styles.radioLabel}>{label}</Text>
-                  </View>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
+        <View style={{flex: 1}}>
+          <Text style={{marginLeft: 15, marginTop: -10, padding: 10, alignSelf: 'center', fontSize: 12, fontWeight: 500, color: 'white', borderWidth: 1, borderColor: 'white', borderRadius: 20}}>
+            Date: {currentDateTime.toLocaleString()}
+          </Text>
         </View>
-        <View style={styles.container}>
-        <View style={styles.buttons}>
-        <TouchableOpacity
-            onPress={() => {
-              Alert.alert('Successful!', 'Your reservation has been added.');
-            }}>
-            <View style={styles.btnXL}>
-              <FeatherIcon
-                color="#fff"
-                name="folder-plus"
-                size={20}
-                style={{ marginRight: 12 }}
-              />
 
-              <Text style={styles.btnXLText}>Confirm Reservation</Text>
-            </View>
-          </TouchableOpacity>
-          </View>
-        </View>
       </ScrollView>
     </View>
   );
@@ -271,6 +166,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 4,
     opacity: 0.8
+  },
+  subtitle1: {
+    fontSize: 13,
+    color: 'white',
+    textAlign: 'center',
+    padding: 4,
+  },
+  subtitle2: {
+    fontSize: 13,
+    color: 'white',
+    textAlign: 'center',
+    padding: 4,
   },
   section: {
     backgroundColor: 'black',
